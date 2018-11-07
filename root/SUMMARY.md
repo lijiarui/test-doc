@@ -1,28 +1,30 @@
-# Summary
+# Table of contents
 
+* [Introduction](README.md)
 * [Overview](overview.md)
 * [Concepts](concepts.md)
 * [Quickstart](quickstart.md)
 * [Tutorials](tutorials.md)
 
 ## Wechaty-EN
+
 * [Quick Start](wechaty/quick-start.md)
-* API Reference
-  * [Wechaty](wechaty/api/wechaty.md)
-  * [Contact](wechaty/api/contact.md)
-  * [ContactSelf](wechaty/api/contact-self.md)
-  * [Room](wechaty/api/room.md)
-  * [RoomInvitation](wechaty/api/room-invitation.md)
-  * [Message](wechaty/api/message.md)
-  * [Friendship](wechaty/api/friendship.md)
+* [API Reference](wechaty/api-reference/README.md)
+  * [Wechaty](wechaty/api-reference/wechaty.md)
+  * [Contact](wechaty/api-reference/contact.md)
+  * [ContactSelf](wechaty/api-reference/contact-self.md)
+  * [Room](wechaty/api-reference/room.md)
+  * [RoomInvitation](wechaty/api-reference/room-invitation.md)
+  * [Message](wechaty/api-reference/message.md)
+  * [Friendship](wechaty/api-reference/friendship.md)
 * [Examples](wechaty/examples.md)
 * [Puppet](wechaty/puppet.md)
 * [FAQ](wechaty/faq.md)
-* [Change Log](wechaty/changelog.md)
+* [Change Log](wechaty/change-log.md)
 * [Advanced](wechaty/advanced.md)
 * [Awesome Wechaty](wechaty/awesome-wechaty.md)
 
-## [Wechaty-CH](ch/README.md)
+## Wechaty-CH
 
 * [介绍](ch/README.md)
 * [快速开始](ch/quick-start.md)
@@ -37,11 +39,10 @@
 * [示例代码](ch/example.md)
 * [Puppet](ch/puppet.md)
 * [FAQ](ch/faq.md)
-* [购买第三方iPad版本](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
-* [视频教程](ch/more/video.md)
-* [进阶](ch/more/advanced.md)
-  * [ReleaseLog](ch/more/releaselog.md)
-  * [ChangeLog](ch/more/changelog.md)
-  * [Awesome Wechaty](ch/more/awesome-wechaty.md)
+* [购买第三方iPad版本](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token)
+* [视频教程](ch/video.md)
+* [进阶](ch/advanced/README.md)
+  * [ReleaseLog](ch/advanced/releaselog.md)
+  * [ChangeLog](ch/advanced/changelog.md)
+  * [Awesome Wechaty](ch/advanced/awesome-wechaty.md)
   * [Contributors](https://github.com/Chatie/wechaty/wiki/Contributors)
-
