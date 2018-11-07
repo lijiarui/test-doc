@@ -6,22 +6,21 @@
 * [Tutorials](tutorials.md)
 
 ## Wechaty-EN
-* [Wechaty-EN](wechaty/README.md)
-  * [Quick Start](wechaty/quick-start.md)
-  * API Reference
-    * [Wechaty](wechaty/api/wechaty.md)
-    * [Contact](wechaty/api/contact.md)
-    * [ContactSelf](wechaty/api/contact-self.md)
-    * [Room](wechaty/api/room.md)
-    * [RoomInvitation](wechaty/api/room-invitation.md)
-    * [Message](wechaty/api/message.md)
-    * [Friendship](wechaty/api/friendship.md)
-  * [Examples](wechaty/examples.md)
-  * [Puppet](wechaty/puppet.md)
-  * [FAQ](wechaty/faq.md)
-  * [Change Log](wechaty/changelog.md)
-  * [Advanced](wechaty/advanced.md)
-  * [Awesome Wechaty](wechaty/awesome-wechaty.md)
+* [Quick Start](wechaty/quick-start.md)
+* API Reference
+  * [Wechaty](wechaty/api/wechaty.md)
+  * [Contact](wechaty/api/contact.md)
+  * [ContactSelf](wechaty/api/contact-self.md)
+  * [Room](wechaty/api/room.md)
+  * [RoomInvitation](wechaty/api/room-invitation.md)
+  * [Message](wechaty/api/message.md)
+  * [Friendship](wechaty/api/friendship.md)
+* [Examples](wechaty/examples.md)
+* [Puppet](wechaty/puppet.md)
+* [FAQ](wechaty/faq.md)
+* [Change Log](wechaty/changelog.md)
+* [Advanced](wechaty/advanced.md)
+* [Awesome Wechaty](wechaty/awesome-wechaty.md)
 
 ## Wechaty-CH
 
