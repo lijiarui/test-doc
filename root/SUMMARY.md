@@ -38,11 +38,11 @@
 * [Puppet](ch/puppet.md)
 * [FAQ](ch/faq.md)
 * [购买第三方iPad版本](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
-* [视频教程](ch/api/more/video.md)
-* [进阶](ch/api/more/advanced.md)
-  * [ReleaseLog](ch/api/more/releaselog.md)
-  * [ChangeLog](ch/api/more/changelog.md)
-  * [Awesome Wechaty](ch/api/more/awesome-wechaty.md)
+* [视频教程](ch/more/video.md)
+* [进阶](ch/more/advanced.md)
+  * [ReleaseLog](ch/more/releaselog.md)
+  * [ChangeLog](ch/more/changelog.md)
+  * [Awesome Wechaty](ch/more/awesome-wechaty.md)
   * [Contributors](https://github.com/Chatie/wechaty/wiki/Contributors)
 
 
