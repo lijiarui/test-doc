@@ -22,10 +22,10 @@
 * [Advanced](wechaty/advanced.md)
 * [Awesome Wechaty](wechaty/awesome-wechaty.md)
 
-## Wechaty-CH
+## [Wechaty-CH](ch/README.md)
 
-* [介绍](README.md)
-* [快速开始](quick-start.md)
+* [介绍](ch/README.md)
+* [快速开始](ch/quick-start.md)
 * [API 文档](ch/api/README.md)
   * [Wechaty](ch/api/wechaty.md)
   * [Message](ch/api/message.md)
@@ -34,9 +34,9 @@
   * [Room](ch/api/room.md)
   * [RoomInvitation](ch/api/room-invitation.md)
   * [Friendship](ch/api/friendship.md)
-* [示例代码](example.md)
-* [Puppet](puppet.md)
-* [FAQ](faq.md)
+* [示例代码](ch/example.md)
+* [Puppet](ch/puppet.md)
+* [FAQ](ch/faq.md)
 * [购买第三方iPad版本](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
 * [视频教程](api/more/video.md)
 * [进阶](api/more/advanced.md)
