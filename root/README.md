@@ -1,4 +1,5 @@
 # Introduction
+中文文档
 
 Welcome to Chatie! We've created this documentation to help answer any questions you may have about what Chatie is, how to use it and what its APIs are.
 
