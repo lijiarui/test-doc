@@ -1,32 +1,12 @@
 ---
-description: All wechat rooms(groups) will be encapsulated as a Room.
+description: 所有的微信群都会被封装成 Room 类
 ---
 
 # Room
 
-## Classes
-
-[Room](room.md#Room)
-
-All wechat rooms\(groups\) will be encapsulated as a Room.
-
-[Examples/Room-Bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/room-bot.ts)
-
-## Typedefs
-
-[RoomQueryFilter](room.md#RoomQueryFilter)
-
-The filter to find the room: {topic: string \| RegExp}[RoomEventName](room.md#RoomEventName)
-
-Room Class Event Type[RoomEventFunction](room.md#RoomEventFunction)
-
-Room Class Event Function[RoomMemberQueryFilter](room.md#RoomMemberQueryFilter)
-
-The way to search member by Room.member\(\)
-
 ## Room
 
-All wechat rooms\(groups\) will be encapsulated as a Room.
+所有的微信群都会被封装成 Room 类。
 
 [Examples/Room-Bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/room-bot.ts)
 
@@ -35,34 +15,34 @@ All wechat rooms\(groups\) will be encapsulated as a Room.
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| id | `string` | Get Room id. This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table) |
+| id | `string` | 获取群id。这个id 是否是永久不变的id 取决于使用哪一个puppet，具体 [查看puppet兼容性清单](../puppet.md#3-wechaty-puppet-jian-rong-xing)。 |
 
-* [Room](room.md#Room)
+* [Room](room.md#room)
   * _instance_
-    * [.sync\(\)](room.md#Room+sync) ⇒ `Promise.`
-    * [.say\(textOrContactOrFileOrUrl, \[mention\]\)](room.md#Room+say) ⇒ `Promise.`
-    * [.on\(event, listener\)](room.md#Room+on) ⇒ `this`
-    * [.add\(contact\)](room.md#Room+add) ⇒ `Promise.`
-    * [.del\(contact\)](room.md#Room+del) ⇒ `Promise.`
-    * [.quit\(\)](room.md#Room+quit) ⇒ `Promise.`
-    * [.topic\(\[newTopic\]\)](room.md#Room+topic) ⇒ `Promise.`
-    * [.announce\(\[text\]\)](room.md#Room+announce) ⇒ `Promise.`
-    * [.qrcode\(\)](room.md#Room+qrcode) ⇒ `Promise.`
-    * [.alias\(contact\)](room.md#Room+alias) ⇒ `Promise.`
-    * [.has\(contact\)](room.md#Room+has) ⇒ `Promise.`
-    * [.memberAll\(\[query\]\)](room.md#Room+memberAll) ⇒ `Promise.>`
-    * [.member\(queryArg\)](room.md#Room+member) ⇒ `Promise.`
-    * [.owner\(\)](room.md#Room+owner) ⇒ `Contact` \| `null`
+    * [.sync\(\)](room.md#room-sync-promise) ⇒ `Promise.`
+    * [.say\(textOrContactOrFileOrUrl, \[mention\]\)](room.md#room-say-textorcontactorfileorurl-mention-promise) ⇒ `Promise.`
+    * [.on\(event, listener\)](room.md#room-on-event-listener-this) ⇒ `this`
+    * [.add\(contact\)](room.md#room-add-contact-promise) ⇒ `Promise.`
+    * [.del\(contact\)](room.md#room-del-contact-promise) ⇒ `Promise.`
+    * [.quit\(\)](room.md#room-quit-promise) ⇒ `Promise.`
+    * [.topic\(\[newTopic\]\)](room.md#room-topic-newtopic-promise) ⇒ `Promise.`
+    * [.announce\(\[text\]\)](room.md#room-announce-text-promise) ⇒ `Promise.`
+    * [.qrcode\(\)](room.md#room-qrcode-promise) ⇒ `Promise.`
+    * [.alias\(contact\)](room.md#room-alias-contact-promise) ⇒ `Promise.`
+    * [.has\(contact\)](room.md#room-has-contact-promise) ⇒ `Promise.`
+    * [.memberAll\(\[query\]\)](room.md#room-memberall-query-promise-greater-than) ⇒ `Promise.>`
+    * [.member\(queryArg\)](room.md#room-member-queryarg-promise) ⇒ `Promise.`
+    * [.owner\(\)](room.md#room-owner-contact-or-null) ⇒ `Contact` \| `null`
   * _static_
-    * [.create\(contactList, \[topic\]\)](room.md#Room.create) ⇒ [`Promise.`](room.md#Room)
-    * [.findAll\(\[query\]\)](room.md#Room.findAll) ⇒ `Promise.>`
-    * [.find\(query\)](room.md#Room.find) ⇒ `Promise.`
+    * [.create\(contactList, \[topic\]\)](room.md#room-create-contactlist-topic-promise) ⇒ [`Promise.`](room.md#Room)
+    * [.findAll\(\[query\]\)](room.md#room-findall-query-promise-greater-than) ⇒ `Promise.>`
+    * [.find\(query\)](room.md#room-findall-query-promise-greater-than) ⇒ `Promise.`
 
 ### room.sync\(\) ⇒ `Promise.`
 
-Force reload data for Room, Sync data from lowlevel API again.
+强制加载群的数据，从底层API 重新加载数据。
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Example**
 
 ```javascript
@@ -71,16 +51,18 @@ await room.sync()
 
 ### room.say\(textOrContactOrFileOrUrl, \[mention\]\) ⇒ `Promise.`
 
-Send message inside Room, if set \[replyTo\], wechaty will mention the contact as well.
+在群内发消息，如果设置了 \[mention\] 参数，机器人在群内发送消息的时候还会@这个联系人。
 
-> Tips: This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
+{% hint style="info" %}
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+{% endhint %}
 
-**Kind**: instance method of [`Room`](room.md#Room)
+> **Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
-| textOrContactOrFileOrUrl | `string` \| `Contact` \| `FileBox` | Send `text` or `media file` inside Room.   You can use [FileBox](https://www.npmjs.com/package/file-box) to send file |
-| \[mention\] | `Contact` \| `Array.` | Optional parameter, send content inside Room, and mention @replyTo contact or contactList. |
+| textOrContactOrFileOrUrl | `string` \| `Contact` \| `FileBox` | 群内发送 `text` 或者`media file。` 你可以通过 [FileBox](https://www.npmjs.com/package/file-box) 来发送文件。 |
+| \[mention\] | `Contact` \| `Array.` | 可选参数，当设置这个参数的时候，在群内发送文本消息会@此联系人。 |
 
 **Example**
 
@@ -112,13 +94,13 @@ await room.say('Hello world!', contact)
 
 ### room.on\(event, listener\) ⇒ `this`
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Returns**: `this` - - this for chain
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
-| event | [`RoomEventName`](room.md#RoomEventName) | Emit WechatyEvent |
-| listener | [`RoomEventFunction`](room.md#RoomEventFunction) | Depends on the WechatyEvent |
+| event | [`RoomEventName`](room.md#RoomEventName) | 群内事件触发 |
+| listener | [`RoomEventFunction`](room.md#RoomEventFunction) | 取决于是哪一个事件 |
 
 **Example** _\(Event:join \)_
 
@@ -178,13 +160,15 @@ if (room) {
 
 ### room.add\(contact\) ⇒ `Promise.`
 
-Add contact in a room
+邀请好友加入群聊。
 
-> Tips: This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
->
-> see [Web version of WeChat closed group interface](https://github.com/Chatie/wechaty/issues/1441)
+{% hint style="info" %}
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 
-**Kind**: instance method of [`Room`](room.md#Room)
+基于网页微信开发的用户请查看： [Web version of WeChat closed group interface](https://github.com/Chatie/wechaty/issues/1441)
+{% endhint %}
+
+**Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type |
 | :--- | :--- |
@@ -209,13 +193,15 @@ if (room) {
 
 ### room.del\(contact\) ⇒ `Promise.`
 
-Delete a contact from the room It works only when the bot is the owner of the room
+将好友移出群聊，这个功能仅在机器人是群主的时候会生效。
 
-> Tips: This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
->
-> see [Web version of WeChat closed group interface](https://github.com/Chatie/wechaty/issues/1441)
+{% hint style="info" %}
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 
-**Kind**: instance method of [`Room`](room.md#Room)
+基于网页微信开发的用户请查看： [Web version of WeChat closed group interface](https://github.com/Chatie/wechaty/issues/1441)
+{% endhint %}
+
+**Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type |
 | :--- | :--- |
@@ -240,11 +226,13 @@ if (room) {
 
 ### room.quit\(\) ⇒ `Promise.`
 
-Bot quit the room itself
+机器人主动退群。
 
-> Tips: This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
+{% hint style="info" %}
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+{% endhint %}
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Example**
 
 ```javascript
@@ -253,13 +241,13 @@ await room.quit()
 
 ### room.topic\(\[newTopic\]\) ⇒ `Promise.`
 
-SET/GET topic from the room
+设置 / 获取 群名称。
 
-**Kind**: instance method of [`Room`](room.md#Room)
+**Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
-| \[newTopic\] | `string` | If set this para, it will change room topic. |
+| \[newTopic\] | `string` | 参数可选，如果没有设置，则会获取群名称，如果设置了，则会设置群名称。 |
 
 **Example** _\(When you say anything in a room, it will get room topic. \)_
 
@@ -294,17 +282,19 @@ bot
 
 ### room.announce\(\[text\]\) ⇒ `Promise.`
 
-SET/GET announce from the room
+设置/获取 群公告。
 
-> Tips: It only works when bot is the owner of the room.
->
-> This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
+{% hint style="info" %}
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 
-**Kind**: instance method of [`Room`](room.md#Room)
+这个功能仅在机器人是群主的时候生效。
+{% endhint %}
+
+**Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
-| \[text\] | `string` | If set this para, it will change room announce. |
+| \[text\] | `string` | 如果设置了这个参数，则会设置群公告，如果没有设置，则是获取群公告。 |
 
 **Example** _\(When you say anything in a room, it will get room announce. \)_
 
@@ -331,19 +321,22 @@ console.log(`room announce change from ${oldAnnounce} to ${room.announce()}`)
 
 ### room.qrcode\(\) ⇒ `Promise.`
 
-Get QR Code of the Room from the room, which can be used as scan and join the room.
+获取群二维码，用户可以通过扫描这个二维码加入群聊。
 
-> Tips: This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
+{% hint style="info" %}
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+这个二维码仅在群人数小于100人的时候可用。
+{% endhint %}
 
+**Kind**: instance method of [`Room`](room.md#room)
 
 ### room.alias\(contact\) ⇒ `Promise.`
 
-Return contact's roomAlias in the room
+获取这个联系人在群内的群昵称。
 
-**Kind**: instance method of [`Room`](room.md#Room)  
-**Returns**: `Promise.` - - If a contact has an alias in room, return string, otherwise return null
+**Kind**: instance method of [`Room`](room.md#room)  
+**Returns**: `Promise.` - - 如果此联系人在群内设置了群昵称则会返回，否则会返回空。
 
 | Param | Type |
 | :--- | :--- |
@@ -367,9 +360,9 @@ bot
 
 ### room.has\(contact\) ⇒ `Promise.`
 
-Check if the room has member `contact`, the return is a Promise and must be `await`-ed
+检查群内是否有这个群成员。
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Returns**: `Promise.` - Return `true` if has contact, else return `false`.
 
 | Param | Type |
@@ -395,57 +388,65 @@ if (contact && room) {
 
 ### room.memberAll\(\[query\]\) ⇒ `Promise.>`
 
-Find all contacts in a room
+根据 query 获取群内所有的群成员列表。如果没有设置query，返回所有的群成员信息。
 
-#### definition
+#### 定义
 
-* `name`                 the name-string set by user-self, should be called name, equal to `Contact.name()`
-* `roomAlias`            the name-string set by user-self in the room, should be called roomAlias
-* `contactAlias`         the name-string set by bot for others, should be called alias, equal to `Contact.alias()`
+* `name`                       微信联系人自己设置的昵称，等于 `Contact.name()`
+* `roomAlias`             微信联系人自己在群内设置的昵称。
+* `contactAlias`       机器人给微信联系人设置的，等于 `Contact.alias()`
 
-**Kind**: instance method of [`Room`](room.md#Room)
-
-| Param | Type | Description |
-| :--- | :--- | :--- |
-| \[query\] | [`RoomMemberQueryFilter`](room.md#RoomMemberQueryFilter) \| `string` | Optional parameter, When use memberAll\(name:string\), return all matched members, including name, roomAlias, contactAlias |
-
-**Example**
-
-```javascript
-const roomList:Conatct[] | null = await room.findAll()
-if(roomList)
- console.log(`room all member list: `, roomList)
-const memberContactList: Conatct[] | null =await room.findAll(`abc`)
-console.log(`contact list with all name, room alias, alias are abc:`, memberContactList)
-```
-
-### room.member\(queryArg\) ⇒ `Promise.`
-
-Find all contacts in a room, if get many, return the first one.
-
-**Kind**: instance method of [`Room`](room.md#Room)
+**Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
-| queryArg | [`RoomMemberQueryFilter`](room.md#RoomMemberQueryFilter) \| `string` | When use member\(name:string\), return all matched members, including name, roomAlias, contactAlias |
 
-**Example** _\(Find member by name\)_
 
-```javascript
-const bot = new Wechaty()
-await bot.start()
-// after logged in...
-const room = await bot.Room.find({topic: 'wechaty'})           // change 'wechaty' to any room name in your wechat
-if (room) {
-  const member = await room.member('lijiarui')             // change 'lijiarui' to any room member in your wechat
-  if (member) {
-    console.log(`wechaty room got the member: ${member.name()}`)
-  } else {
-    console.log(`cannot get member in wechaty room!`)
-  }
-}
-```
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">[query]</th>
+      <th style="text-align:left"><a href="room.md#roommemberqueryfilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
+      </th>
+      <th style="text-align:left">
+        <p>可选参数。</p>
+        <ul>
+          <li>RoomMemberQueryFilter 可通过 name, roomAlias, contactAlias 查找指定的群成员。</li>
+          <li>当memberAll(name) 的参数为string 类型的时候, 返回所有找到的群成员。这里面的name 包括上面定义的name, roomAlias,
+            contactAlias。</li>
+        </ul>
+      </th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>### room.member\(queryArg\) ⇒ `Promise.`
 
+根据 query 查找群成员，如果找到多个，返回第一个。
+
+**Kind**: instance method of [`Room`](room.md#room)
+
+| Param | Type | Description |
+| :--- | :--- | :--- |
+
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">queryArg</th>
+      <th style="text-align:left"><a href="room.md#roommemberqueryfilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
+      </th>
+      <th style="text-align:left">
+        <p>如果找到多个，返回第一个。</p>
+        <ul>
+          <li>RoomMemberQueryFilter 可通过 name, roomAlias, contactAlias 查找指定的群成员。</li>
+          <li>当memberAll(name) 的参数为string 类型的时候, 返回所有找到的群成员。这里面的name 包括上面定义的name, roomAlias,
+            contactAlias。</li>
+        </ul>
+      </th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>```text
 **Example** _\(Find member by MemberQueryFilter\)_
 
 ```javascript
@@ -465,11 +466,13 @@ if (room) {
 
 ### room.owner\(\) ⇒ `Contact` \| `null`
 
-Get room's owner from the room.
+获取群主的信息。
 
-> Tips: This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
+{% hint style="info" %}
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+{% endhint %}
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Example**
 
 ```javascript
@@ -478,9 +481,9 @@ const owner = room.owner()
 
 ### Room.create\(contactList, \[topic\]\) ⇒ [`Promise.`](room.md#Room)
 
-Create a new room.
+创建群聊
 
-**Kind**: static method of [`Room`](room.md#Room)
+**Kind**: static method of [`Room`](room.md#room)
 
 | Param | Type |
 | :--- | :--- |
@@ -502,13 +505,13 @@ await room.say('ding - created')
 
 ### Room.findAll\(\[query\]\) ⇒ `Promise.>`
 
-Find room by by filter: {topic: string \| RegExp}, return all the matched room
+通过 {topic: string \| RegExp}, 查找群，返回找到的所有群的数组。
 
-**Kind**: static method of [`Room`](room.md#Room)
+**Kind**: static method of [`Room`](room.md#room)
 
 | Param | Type |
 | :--- | :--- |
-| \[query\] | [`RoomQueryFilter`](room.md#RoomQueryFilter) |
+| \[query\] | [`RoomQueryFilter`](room.md#roomqueryfilter) |
 
 **Example**
 
@@ -522,14 +525,14 @@ const roomList = await bot.Room.findAll({topic: 'wechaty'})  // find all of the 
 
 ### Room.find\(query\) ⇒ `Promise.`
 
-Try to find a room by filter: {topic: string \| RegExp}. If get many, return the first one.
+通过 {topic: string \| RegExp}, 查找群，如果找到多个群，返回找到的第一个群。
 
-**Kind**: static method of [`Room`](room.md#Room)  
+**Kind**: static method of [`Room`](room.md#room)  
 **Returns**: `Promise.` - If can find the room, return Room, or return null
 
 | Param | Type |
 | :--- | :--- |
-| query | [`RoomQueryFilter`](room.md#RoomQueryFilter) |
+| query | [`RoomQueryFilter`](room.md#roomqueryfilter) |
 
 **Example**
 
@@ -541,9 +544,18 @@ const roomList = await bot.Room.find()
 const roomList = await bot.Room.find({topic: 'wechaty'})
 ```
 
-## RoomQueryFilter
+## 类型定义
 
-The filter to find the room: {topic: string \| RegExp}
+[RoomQueryFilter](room.md#RoomQueryFilter)
+
+* [RoomQueryFilter](room.md#roomqueryfilter) ：查找群的过滤器，{topic: string \| RegExp}
+* [RoomEventName](room.md#roomeventname) ：群事件的类型
+* [RoomEventFunction](room.md#roomeventfunction) ：群事件的方法
+* [RoomMemberQueryFilter](room.md#roommemberqueryfilter) ： 通过Room.member\(\) 搜索群成员的过滤器
+
+### RoomQueryFilter
+
+查找群的过滤器，{topic: string \| RegExp}
 
 **Kind**: global typedef  
 **Properties**
@@ -552,20 +564,20 @@ The filter to find the room: {topic: string \| RegExp}
 | :--- | :--- |
 | topic | `string` |
 
-## RoomEventName
+### RoomEventName
 
-Room Class Event Type
+群事件的类型
 
 **Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| join | `string` | Emit when anyone join any room. |
-| topic | `string` | Get topic event, emitted when someone change room topic. |
-| leave | `string` | Emit when anyone leave the room.                                If someone leaves the room by themselves, wechat will not notice other people in the room, so the bot will never get the "leave" event. |
+| join | `string` | 当有人入群的时候，会触发这个事件。 |
+| topic | `string` | 当有人修改群名称的时候，会触发这个事件。 |
+| leave | `string` | 当有人离群的时候，会触发这个事件。如果是用户主动离群，是无法获取到这个事件的。 |
 
-## RoomEventFunction
+### RoomEventFunction
 
 Room Class Event Function
 
@@ -578,16 +590,16 @@ Room Class Event Function
 | room-topic | `function` | \(this: Room, topic: string, oldTopic: string, changer: Contact\) =&gt; void |
 | room-leave | `function` | \(this: Room, leaver: Contact\) =&gt; void |
 
-## RoomMemberQueryFilter
+### RoomMemberQueryFilter
 
-The way to search member by Room.member\(\)
+通过Room.member\(\) 搜索群成员的过滤器
 
 **Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| name | `string` | Find the contact by wechat name in a room, equal to `Contact.name()`. |
-| roomAlias | `string` | Find the contact by alias set by the bot for others in a room. |
-| contactAlias | `string` | Find the contact by alias set by the contact out of a room, equal to `Contact.alias()`. [More Detail](https://github.com/Chatie/wechaty/issues/365) |
+| name | `string` | 通过用户的昵称查找群成员，这里面的name 等于`Contact.name()`. |
+| roomAlias | `string` | 通过用户设置的群昵称查找群成员。 |
+| contactAlias | `string` | 通过机器人给用户设置的备注查找群成员，这里面的contactAlias 等于 `Contact.alias()`. 更多细节查看： [More Detail](https://github.com/Chatie/wechaty/issues/365) |
 
