@@ -2,6 +2,7 @@
 
 Welcome to Chatie! We've created this documentation to help answer any questions you may have about what Chatie is, how to use it and what its APIs are.
 
+
 ## Just learning about Chatie?
 
 Take a look at our [Wechaty 101 Talk](https://blog.chatie.io/wechaty-101-presentation/) which covers our core functionality, feature set and motivations behind the project.
