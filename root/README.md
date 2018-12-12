@@ -1,8 +1,8 @@
 # Introduction
+
 中文文档
 
 Welcome to Chatie! We've created this documentation to help answer any questions you may have about what Chatie is, how to use it and what its APIs are.
-
 
 ## Just learning about Chatie?
 
@@ -21,7 +21,7 @@ We recommend [reading the writeup](https://blog.chatie.io/wechaty-the-bot-sdk/) 
 
   What’s new with the Microsoft Bot Framework
 
-  May 08, 2017 at 1:21PM  by Chris Mullins, Henrik Frystyk Nielsen, Vishwac Sena Kannan\]\([https://channel9.msdn.com/events/Build/2017/B8097](https://channel9.msdn.com/events/Build/2017/B8097)\)
+  May 08, 2017 at 1:21PM by Chris Mullins, Henrik Frystyk Nielsen, Vishwac Sena Kannan\]\([https://channel9.msdn.com/events/Build/2017/B8097](https://channel9.msdn.com/events/Build/2017/B8097)\)
 
 * [A curated list of awesome Microsoft Bot Framework related things](https://github.com/sozercan/awesome-botframework)
 
