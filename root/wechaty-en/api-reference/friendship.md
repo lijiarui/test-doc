@@ -132,8 +132,7 @@ _**Deprecated**_
 
 use [Friendship\#add](https://github.com/lijiarui/test-doc/tree/20173d1213c1cc788a75f53384db51e6da014eca/root/wechaty/api/Friendship/README.md#add) instead
 
-**Kind**: static method of [`Friendship`](friendship.md#Friendship)  
-
+**Kind**: static method of [`Friendship`](friendship.md#Friendship)
 
 ### Friendship.add\(contact, hello\) ⇒ `Promise.`
 

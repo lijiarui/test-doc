@@ -146,40 +146,21 @@ bot
     </tr>
   </thead>
   <tbody></tbody>
-</table>```javascript
-import { FileBox }  from 'file-box'
-const bot = new Wechaty()
-bot
-.on('message', async m => {
+</table>// 1. send Image
 
-// 1. send Image
-
-  if (/^ding$/i.test(m.text())) {
-    const fileBox = FileBox.fromUrl('https://chatie.io/wechaty/images/bot-qr-code.png')
-    await msg.say(fileBox)
-  }
+if \(/^ding$/i.test\(m.text\(\)\)\) { const fileBox = FileBox.fromUrl\('[https://chatie.io/wechaty/images/bot-qr-code.png](https://chatie.io/wechaty/images/bot-qr-code.png)'\) await msg.say\(fileBox\) }
 
 // 2. send Text
 
-  if (/^dong$/i.test(m.text())) {
-    await msg.say('dingdingding')
-  }
+if \(/^dong$/i.test\(m.text\(\)\)\) { await msg.say\('dingdingding'\) }
 
 // 3. send Contact
 
-  if (/^lijiarui$/i.test(m.text())) {
-    const contactCard = await bot.Contact.find({name: 'lijiarui'})
-    if (!contactCard) {
-      console.log('not found')
-      return
-    }
-    await msg.say(contactCard)
-  }
+if \(/^lijiarui$/i.test\(m.text\(\)\)\) { const contactCard = await bot.Contact.find\({name: 'lijiarui'}\) if \(!contactCard\) { console.log\('not found'\) return } await msg.say\(contactCard\) }
 
-})
-.start()
-```
+}\) .start\(\)
 
+```text
 ### message.type\(\) ⇒ `MessageType`
 
 获取消息的类型
@@ -272,9 +253,7 @@ if (await message.mentionSelf()) {
     </tr>
   </thead>
   <tbody></tbody>
-</table>\`\`\`
-
-### message.date\(\)
+</table>### message.date\(\)
 
 消息发送的时间
 
